@@ -1,0 +1,5 @@
+INSTALL:
+In chrome, Wrench bar -> Tools -> Extensions
+check the "Developer mode"
+click "Load unpacked extension.." and select this source directory
+

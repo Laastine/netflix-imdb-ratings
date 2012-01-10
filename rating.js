@@ -18,6 +18,10 @@ $(function(){
 
 	// this function is called several times a second by setInterval
 	function updateMovie() {
+
+		// in case bobBox doesn't exist in the page, or is yet to load:
+		if (!$(".bobMovieHeader").length) return;
+
 		newMovie = $(".bobMovieHeader > .title").text();
 		
 		// looks like badMovieBox is reconstructed every time

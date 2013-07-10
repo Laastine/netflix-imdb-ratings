@@ -1,6 +1,7 @@
 {
 	"name": "Netflix movie ratings (from IMDB)",
 	"version": "1.0",
+	"manifest_version": 2,
 	"description": "Gets IMDB ratings for movies/TV shows for Netflix",
 	"content_scripts": [
 		{
@@ -8,5 +9,5 @@
 			"js": ["jquery.js", "rating.js"]
 		}
 	],
-	"permissions": ["http:/movies.netflix.com/*", "http://www.imdbapi.com/*"]
+	"permissions": ["http://movies.netflix.com/*", "http://www.imdbapi.com/*"]
 }

@@ -9,5 +9,5 @@
 			"js": ["jquery.js", "rating.js"]
 		}
 	],
-	"permissions": ["http://movies.netflix.com/*", "http://www.imdbapi.com/*"]
+	"permissions": ["http://movies.netflix.com/*", "http://omdbapi.com/*"]
 }

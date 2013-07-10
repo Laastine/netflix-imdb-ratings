@@ -4,5 +4,5 @@ check the "Developer mode"
 click "Load unpacked extension.." and select this source directory
 
 KNOWN BUGS:
-	-Doesn't fetch rating for all movie title's correctly
+	-Doesn't fetch ratings for all movie title's correctly when using some other language than English
 

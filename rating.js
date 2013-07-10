@@ -32,7 +32,6 @@ $(function() {
 
 		if (newMovie != movie || oldIMDBRating == "") {
 			movie = newMovie;
-			//year = $(".bobMovieHeader > .year").text();
 			$(".bobMovieHeader").append("<span id='imdb_rating'></span>");
 			try {
 				http.open("GET", "http://www.omdbapi.com/?i=&t="+escape(movie));

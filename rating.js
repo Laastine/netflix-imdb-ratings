@@ -3,19 +3,6 @@ $ = jQuery;
 $(function() {
 
 	var movie = "";
-	var http = new XMLHttpRequest();
-
-	// this method is called by XMLHttpRequest after a req is made from updateMovie()
-	http.onreadystatechange = function() {
-		if (http.readyState == 4 && http.status == 200) {
-			try {
-				// might throw an exception for bad JSON
-				var imdb_obj = JSON.parse(http.responseText);
-				$("#imdb_rating").text("IMDB="+imdb_obj.imdbRating);
-			} catch (err) {}
-		}
-	}
-
 	// this function is called several times a second by setInterval
 	function updateMovie() {
 
@@ -30,12 +17,13 @@ $(function() {
 		// TODO: cache the ratings in local storage
 		var oldIMDBRating = $("#imdb_rating").text();
 
-		if (newMovie != movie || oldIMDBRating == "") {
+		if (newMovie != movie || oldIMDBRating === "") {
 			movie = newMovie;
 			$(".bobMovieHeader").append("<span id='imdb_rating'></span>");
 			try {
-				http.open("GET", "http://www.omdbapi.com/?i=&t="+escape(movie));
-				http.send();
+        $.get('http://www.omdbapi.com/?i=&t='+escape(movie)).then(function(responseText) {
+          $("#imdb_rating").text("IMDB="+JSON.parse(responseText).imdbRating);
+        });
 			} catch (err) { alert("Catched error: "+err); }
 		}
 	}
